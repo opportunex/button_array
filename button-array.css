@@ -1,0 +1,38 @@
+.button-array {
+    display: block;
+    position: relative;
+    width:100%;
+}
+.button-array-button {
+    display: block;
+    margin-left: -8px;
+    width: 100% !important;
+}
+.button-array-button a, .button-array-button .btn {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+    width: 100% !important;
+}
+.button-array-button .btn .button-left {
+	float: left;
+}	
+.button-array-button .btn .button-right {
+	float: right;
+}
+.button-array-button .btn .button-array-icon {
+	display: inline-block;
+	padding:2px;
+	.box-sizing(border-box);
+	position: relative;
+}
+.button-array-button .btn .button-array-icon .button-icon-left {
+	float: left;
+}	
+.button-array-button .btn .button-array-icon .button-icon-right {
+	float: right;
+}
