@@ -160,17 +160,19 @@ class PLbutton_array extends PageLinesSection {
         	printf('<div id="button-array-%s" class="button-array"><div class="row zmt zmb">',$id);
 
         }
+            
             $count = 0;
+            $itemsct = 0;
             $output = '';
             $margin = 8;
             $items  = ($this->opt($this->btn.'count')) ? $this->opt($this->btn.'count') : $this->default_limit;
             $style  = $this->opt($this->btn.'button_style') ? $this->opt($this->btn.'button_style') : 'btn-large';
             $height  = $this->opt($this->btn.'button_height') ? $this->opt($this->btn.'button_height') : 'auto';
             
-
             for($i = 1; $i <= $items; $i++):
                 
                 $count++;
+                $itemsct++;
                 $rowcount = 12/$layout;
                 
                 if($layout != 12) { $output = $output.= sprintf('<div class="zmt zmb span%s">',$layout); }
@@ -194,9 +196,17 @@ class PLbutton_array extends PageLinesSection {
                     	$output = $output .= sprintf('<div class="button-array-button""><a style="margin:%spx !important; min-height:%s" class="btn %s %s input-block-level pull-left %s" href="%s" target="%s" >%s</a></div>',$margin,$height,$style,$btntheme,$btnclass,$btnlink,$target,$btntext,$i);
                     }
        
-                if($layout != 12) { $output = $output.= sprintf('</div>'); }       
+                if($layout != 12) { 
+                    
+                    $output = $output.= sprintf('</div>');        
                 
-                if($count == $rowcount) { $output = $output.= sprintf('</div><div class="row zmt zmb">'); $count = 0; }
+                    if($count == $rowcount && $itemsct != $items) { 
+                        
+                        $output = $output.= sprintf('</div><div class="row zmt zmb">'); $count = 0; 
+                    
+                    }
+                    
+                }
                 
             endfor;
 
