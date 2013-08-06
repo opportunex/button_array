@@ -9,9 +9,6 @@
 	Loading: active
 */
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
 class PLbutton_array extends PageLinesSection {
 
 	var $btn = 'pl_button_array';
