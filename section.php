@@ -5,7 +5,7 @@
 	Author URI: http://opportunex.com
 	Description: Create a button array with multiple display options.
 	Class Name: PLbutton_array
-	Filter: Misc
+	Filter: component
 	Loading: active
 */
 
@@ -138,12 +138,6 @@ class PLbutton_array extends PageLinesSection {
 		}
 
 		return $options;
-	}
-    
-    function section_styles(){
-		
-        wp_enqueue_style( 'button-array-css', $this->base_url.'/button-array.css');
-		
 	}
        
     function section_template() {
